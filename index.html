@@ -15,6 +15,41 @@
     padding-top: 100px;
   transition: padding-top 0.3s ease;
 }
+  .gradient-btn {
+  background: linear-gradient(135deg, #ff69b4, #8a2be2, #800080);
+  color: white !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(135deg, #ff69b4, #8a2be2, #800080);
+  color: white !important;
+  text-decoration: none;
+
+}
+.view-btn {
+  background: linear-gradient(135deg, #ff69b4, #8a2be2, #800080);
+  color: white !important;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.view-btn:hover {
+  background: linear-gradient(135deg, #800080, #ff69b4, #8a2be2);
+  transform: scale(1.05);
+  color: white !important;
+  text-decoration: none;
+}
+
 
   .login-wrapper {       
   min-height: 100%;
@@ -204,10 +239,9 @@
            <p>I’m a Web Developer in training, currently building a strong foundation in HTML, CSS, Bootstrap, JavaScript, Python, and SQL. I'm actively expanding my skills into React.js and Django as I progress through a full stack development course. I enjoy crafting clean, responsive user interfaces and bringing them to life with functionality and logic.
                  I’m passionate about learning modern technologies and excited to grow as a developer by building real-world projects and collaborating on impactful web applications.</p>
                  <!--3. MODIFIED "HIRE ME" BUTTON -->
-<a href="#" class="btn btn-dark me-2" style="color:white;" data-bs-toggle="modal" data-bs-target="#hireModal">Hire Me</a>
-
-<!-- 📌 4. MODIFIED RESUME BUTTON -->
-<a href="#" class="btn btn-dark dropdown-toggle" style="color:white;" data-bs-toggle="modal" data-bs-target="#resumeModal">Resume</a>
+<a href="#" class="gradient-btn me-2" data-bs-toggle="modal" data-bs-target="#hireModal">Hire Me</a>
+<!--resume button-->
+<a href="#" class="gradient-btn dropdown-toggle" data-bs-toggle="modal" data-bs-target="#resumeModal">Resume</a>
 
 <!-- 📌 5. HIRE ME MODAL -->
 <div class="modal fade" id="hireModal" tabindex="-1" aria-labelledby="hireModalLabel" aria-hidden="true">
@@ -305,7 +339,7 @@
             <h5 class="card-title">Pelican Crossing System</h5>
             <p class="card-text">Arduino-based pedestrian crossing using IR sensors for safe and smart traffic control.</p>
             <p><strong>Tools:</strong> Arduino, IR Sensors, C</p>
-            <a href="#" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pelicanModal">View Details</a>
+            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#pelicanModal">View Details</a>
 
           </div>
         </div>
@@ -335,7 +369,7 @@
             <h5 class="card-title">Railway Track Monitoring Tool</h5>
             <p class="card-text">Real-time railway defect detection with GPS alert system for enhanced safety and monitoring.</p>
             <p><strong>Tools:</strong> GPS, Sensors, Embedded</p>
-            <a href="#" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#rtmtModal">View Details</a>
+            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#rtmtModal">View Details</a>
           </div>
         </div>
       </div>
@@ -369,7 +403,7 @@
             <h5 class="card-title">Personal Portfolio Website</h5>
             <p class="card-text">A responsive and interactive personal portfolio showcasing my skills, projects, and career journey. Built using modern web technologies.</p>
             <p><strong>Tools:</strong> HTML, CSS, Bootstrap, JavaScript</p>
-            <a href="#" class="btn btn-outline-success btn-sm">Live Preview</a>
+            <a href="#" class="view-btn">Live Preview</a>
           </div>
         </div>
       </div>
@@ -382,7 +416,7 @@
             <h5 class="card-title">Responsive Login Page</h5>
             <p class="card-text">Mobile-first login form styled with media queries to adapt seamlessly to different devices.</p>
             <p><strong>Tools:</strong> HTML, CSS</p>
-            <a href="#" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">View Demo</a>
+            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#loginModal">View Demo</a>
 
           </div>
         </div>
@@ -437,7 +471,7 @@
             <h5 class="card-title">JavaScript Calculator</h5>
             <p class="card-text">A basic calculator that performs all four arithmetic operations using custom JS functions.</p>
             <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
-            <a href="#" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#calculatorModal">View Demo</a>
+            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#calculatorModal">View Demo</a>
 
           </div>
         </div>
@@ -492,7 +526,7 @@
             <h5 class="card-title">Lottery Draw Web App</h5>
             <p class="card-text">Random winner generator styled with Bootstrap modals and colorful console feedback.</p>
             <p><strong>Tools:</strong> JavaScript, Bootstrap</p>
-            <a href="#" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#lotteryModal">View Demo</a>
+            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#lotteryModal">View Demo</a>
 
           </div>
         </div>
@@ -549,7 +583,7 @@
   <h3 class="mb-0 px-3 py-3" style="display: flex; align-items: center; gap: 10px; color: white;">
     Connect with me -
     <span class="social-icons" style="display: flex; gap: 15px; margin-left: 10px;">
-      <a href="https://github.com/yourusername" target="_blank">
+      <a href="https://github.com/Stereena" target="_blank">
         <i class="fab fa-github" style="font-size: 28px; color:white;"></i>
       </a>
       <a href="https://www.linkedin.com/in/stereena" target="_blank">
@@ -558,7 +592,7 @@
       <a href="mailto:stereenapatrick@gmail.com" target="_blank">
         <i class="fas fa-envelope" style="font-size: 28px; color:white;"></i>
       </a>
-      <a href="https://instagram.com/yourusername" target="_blank">
+      <a href="https://www.instagram.com/stereenapatrick/?hl=en" target="_blank">
         <i class="fab fa-instagram" style="font-size: 28px; color:white;"></i>
       </a>
     </span>
