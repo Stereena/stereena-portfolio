@@ -11,6 +11,27 @@
 
 </head>
 <style>
+	#typing-title {
+  font-size: 2.2rem; /* Default size */
+  font-weight: bold;
+  color: white;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  #typing-title {
+    font-size: 1.6rem; /* Smaller screen size */
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #typing-title {
+    font-size: 1.3rem;
+  }
+}
+
   #home {
   transition: padding-top 0.3s ease;
 }
