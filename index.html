@@ -12,6 +12,7 @@
 <style>
 
   #home {
+   padding-top: 100px;
   transition: padding-top 0.3s ease;
 }
 
@@ -83,6 +84,25 @@
 .typing-heading {
   white-space: normal;
   overflow: visible;
+	font-size: 6vw;
+  
+}
+  font-size: 6vw;
+}
+
+/* ✅ Restrict max size on large screens */
+@media (min-width: 1200px) {
+  .typing-heading {
+    font-size: 60px; /* max cap for large desktops */
+  }
+}
+
+/* ✅ Adjust size for very small screens */
+@media (max-width: 576px) {
+  .typing-heading {
+    font-size: 8vw;
+    text-align: center;
+  }
 }
 
 
@@ -136,38 +156,53 @@
     }
   </style>
 <body>
-	  <nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-dark ">
-			<ul class="nav nav-pills">
-				<li class="nav-item">
-                  <a class="navbar-brand text-white fw-bold typing-navbar" href="#">
-                     <img src="https://i.postimg.cc/138f5HbF/Whats-App-Image-2025-07-08-at-01-35-05-61afe6d4.jpg" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
-                    <span id="typing-name"></span>
-</a>
+   <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm bg-dark" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
+  <div class="container-fluid">
 
-                </li>
-              <li class="nav-item">
-                  <a class="nav-link " href="#home" style="color:white;">Home</a>
-                </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#about" style="color:white;">About</a>
-               </li>
-               <li class="nav-item">
-                 <a class="nav-link " href="#projects" style="color:white;">Project</a>
-                </li>
-               <li class="nav-item">
-                 <a class="nav-link " href="#skill" style="color:white;">Skills</a>
-                </li>
-               <li class="nav-item">
-                  <a class="nav-link " href="#contact" style="color:white;">Contact</a>
-                </li>
-            </ul>	
-	    </nav>
+    <!-- Brand -->
+    <a class="navbar-brand text-white fw-bold typing-navbar d-flex align-items-center" href="#">
+      <img src="https://i.postimg.cc/138f5HbF/Whats-App-Image-2025-07-08-at-01-35-05-61afe6d4.jpg" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+      <span id="typing-name"></span>
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#projects">Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#skill">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
 
 	<section id=home class="hero py-5">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-8 order-md-1 text-center text-md-start">
-				 <h1 id="typing-title" class="typing-heading" style="font-size: 6vw; text-align: center; white-space: normal;"></h1>
+				 <h1 id="typing-title"
+    class="typing-heading text-center mt-5"
+    style="font-size: clamp(1.8rem, 5vw, 3.5rem);">
+</h1>
 			     <p>I’m a Web Developer in training, currently building a strong foundation in HTML, CSS, Bootstrap, JavaScript, Python, and SQL. I'm actively expanding my skills into React.js and Django as I progress through a full stack development course. I enjoy crafting clean, responsive user interfaces and bringing them to life with functionality and logic.
                  I’m passionate about learning modern technologies and excited to grow as a developer by building real-world projects and collaborating on impactful web applications.</p>
                  <!--3. MODIFIED "HIRE ME" BUTTON -->
