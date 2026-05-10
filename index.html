@@ -1,724 +1,607 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stereena Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</head>  
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stereena Mary Patrick — Digital Marketing Associate</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet"/>
 <style>
-
-  #home {
-    padding-top: 100px;
-  transition: padding-top 0.3s ease;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg2:#0d0d0d;
+  --w:#ffffff;--gr:#a0a0a0;--gr2:#444;
+  --b:rgba(255,255,255,.07);--b2:rgba(255,255,255,.14);
+  --g:rgba(255,255,255,.04);--g2:rgba(255,255,255,.08);
 }
-  .gradient-btn {
-  background: linear-gradient(135deg, #ff69b4, #8a2be2, #800080);
-  color: white !important;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+html{scroll-behavior:smooth}
+body{font-family:'Satoshi',sans-serif;background:var(--bg);color:var(--w);overflow-x:hidden;cursor:none}
+
+#cur{width:10px;height:10px;background:#fff;border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .22s,height .22s;mix-blend-mode:difference}
+#cur-r{width:32px;height:32px;border:1px solid rgba(255,255,255,.28);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:left .1s,top .1s,width .22s,height .22s}
+body.hov #cur{width:20px;height:20px}
+body.hov #cur-r{width:54px;height:54px}
+#prog{position:fixed;top:0;left:0;height:1.5px;background:#fff;z-index:9999;width:0}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:66px;padding:0 54px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,.72);backdrop-filter:blur(22px);border-bottom:1px solid var(--b)}
+.nl{font-size:17px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gr);text-decoration:none;transition:color .2s}
+nav ul a:hover{color:#fff}
+.nc{padding:8px 20px;border:1px solid var(--b2);border-radius:40px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;text-decoration:none;background:var(--g);transition:background .22s,transform .18s}
+.nc:hover{background:#fff;color:#000;transform:translateY(-1px)}
+
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 420px 1fr;align-items:center;padding:96px 54px 56px;position:relative;overflow:hidden}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+.hrad{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:780px;height:480px;background:radial-gradient(ellipse,rgba(255,255,255,.044) 0%,transparent 65%);pointer-events:none}
+
+.hl{padding-right:28px}
+.hbadge{display:inline-flex;align-items:center;gap:7px;padding:7px 15px;border:1px solid var(--b2);border-radius:40px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gr);margin-bottom:24px}
+.hbdot{width:5px;height:5px;border-radius:50%;background:#fff;animation:bl 2s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.1}}
+h1{font-size:clamp(34px,4vw,56px);font-weight:900;line-height:.97;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:16px}
+.hsub{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gr2);margin-bottom:20px}
+.hbio{font-size:14px;font-weight:300;line-height:1.82;color:var(--gr);max-width:350px;margin-bottom:32px}
+.hbtns{display:flex;gap:11px;flex-wrap:wrap}
+.bw{padding:12px 28px;background:#fff;color:#000;border-radius:40px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:transform .18s,box-shadow .28s;box-shadow:0 0 28px rgba(255,255,255,.14)}
+.bw:hover{transform:translateY(-2px);box-shadow:0 0 48px rgba(255,255,255,.28)}
+.bg{padding:12px 28px;border:1px solid var(--b2);color:#fff;border-radius:40px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:var(--g);transition:border-color .22s,background .22s,transform .18s}
+.bg:hover{border-color:rgba(255,255,255,.32);background:var(--g2);transform:translateY(-2px)}
+
+.hcenter{display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.pw{position:relative;width:350px;animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.gr-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:395px;height:395px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.09) 0%,transparent 68%);animation:pr 3.5s ease-in-out infinite}
+@keyframes pr{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.55}50%{transform:translate(-50%,-50%) scale(1.09);opacity:1}}
+.ob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:385px;height:385px;border-radius:50%;border:1px solid rgba(255,255,255,.1);animation:ob 18s linear infinite}
+.ob::before{content:'';position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 14px #fff}
+@keyframes ob{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.pimg{width:330px;height:470px;object-fit:cover;object-position:top center;
+  clip-path:polygon(50% 0%,100% 12%,100% 88%,50% 100%,0% 88%,0% 12%);
+  display:block;position:relative;z-index:1;filter:grayscale(15%) contrast(1.08);transition:filter .5s}
+.pimg:hover{filter:grayscale(0%) contrast(1.12)}
+.pfl{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);width:200px;height:28px;background:radial-gradient(ellipse,rgba(255,255,255,.18),transparent 70%);filter:blur(10px)}
+
+.hr-cards{display:flex;flex-direction:column;gap:8px;padding-left:28px}
+.ec{background:var(--g);border:1px solid var(--b);backdrop-filter:blur(16px);border-radius:12px;padding:12px 17px;font-size:12px;font-weight:500;color:var(--gr);display:flex;align-items:center;gap:9px;transition:border-color .28s,background .28s,transform .28s,color .28s;animation:cfl var(--d,4s) ease-in-out infinite;animation-delay:var(--dl,0s)}
+@keyframes cfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.ec:hover{border-color:var(--b2);background:var(--g2);color:#fff;transform:translateX(-5px)!important}
+.ecdot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);flex-shrink:0}
+
+section{padding:92px 54px}
+.sl{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gr2);margin-bottom:13px;display:flex;align-items:center;gap:10px}
+.sl::before{content:'';display:block;width:22px;height:1px;background:var(--gr2)}
+.st{font-size:clamp(30px,4.2vw,54px);font-weight:900;letter-spacing:-.03em;text-transform:uppercase;line-height:.98;margin-bottom:52px}
+
+#about{background:var(--bg2)}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start;max-width:1120px}
+.at{font-size:15px;font-weight:300;line-height:1.85;color:var(--gr);margin-bottom:28px}
+.at strong{color:#fff;font-weight:500}
+.srow{display:flex;gap:13px;margin-bottom:32px}
+.sb{background:var(--g);border:1px solid var(--b);border-radius:14px;padding:20px 22px;backdrop-filter:blur(12px);transition:border-color .28s,transform .28s;flex:1}
+.sb:hover{border-color:var(--b2);transform:translateY(-4px)}
+.sn{font-size:36px;font-weight:900;letter-spacing:-.04em;line-height:1}
+.slb{font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gr2);margin-top:4px}
+.il{list-style:none;border-top:1px solid var(--b)}
+.ii{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--b);font-size:13px}
+.ik{font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gr2)}
+.iv{color:#fff;font-weight:400}.iv a{color:#fff;text-decoration:none;border-bottom:1px solid var(--gr2);padding-bottom:1px;transition:border-color .2s}.iv a:hover{border-color:#fff}
+
+#experience{background:var(--bg)}
+.ebox{max-width:960px;background:var(--g);border:1px solid var(--b);border-radius:20px;padding:42px;backdrop-filter:blur(16px);display:grid;grid-template-columns:230px 1fr;gap:48px}
+.eco{font-size:24px;font-weight:900;letter-spacing:-.02em;margin-bottom:5px}
+.erl{font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--gr2);margin-bottom:9px}
+.edt{font-size:12px;color:var(--gr2);margin-bottom:18px}
+.lb{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border:1px solid rgba(255,255,255,.14);border-radius:40px;font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#fff;background:var(--g2)}
+.lb::before{content:'';width:5px;height:5px;border-radius:50%;background:#fff;animation:bl 2s infinite}
+.eli-list{list-style:none}
+.eli{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--b);font-size:13px;line-height:1.7;color:var(--gr)}
+.eli::before{content:'→';color:rgba(255,255,255,.3);flex-shrink:0;margin-top:1px}
+.eli:last-child{border-bottom:none}
+
+#skills{background:var(--bg2)}
+.skgr{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;max-width:1080px}
+.skc{background:var(--g);border:1px solid var(--b);border-radius:15px;padding:24px 20px;backdrop-filter:blur(16px);position:relative;overflow:hidden;transition:border-color .28s,transform .3s,background .28s;cursor:default;animation:cfl var(--d,5s) ease-in-out infinite;animation-delay:var(--dl,0s)}
+.skc::before{content:'';position:absolute;top:-40%;left:-40%;width:180%;height:180%;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.07),transparent 55%);opacity:0;transition:opacity .38s;pointer-events:none}
+.skc:hover::before{opacity:1}
+.skc:hover{border-color:var(--b2);background:rgba(255,255,255,.07);transform:translateY(-6px) scale(1.02)}
+.ski{font-size:22px;margin-bottom:11px}
+.skn{font-size:12px;font-weight:700;color:#fff}
+.skbar{height:1.5px;background:var(--b);border-radius:2px;margin-top:13px;overflow:hidden}
+.skf{height:100%;background:#fff;border-radius:2px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
+
+#projects{background:var(--bg)}
+.pgr{display:grid;grid-template-columns:repeat(2,1fr);gap:17px;max-width:1080px}
+.pc{background:var(--g);border:1px solid var(--b);border-radius:20px;overflow:hidden;cursor:pointer;transition:border-color .32s,transform .32s,background .32s;position:relative}
+.pc:hover{border-color:var(--b2);background:rgba(255,255,255,.06);transform:translateY(-5px)}
+.pth{width:100%;height:195px;object-fit:cover;display:block;filter:grayscale(28%) brightness(.82);transition:filter .4s,transform .4s}
+.pc:hover .pth{filter:grayscale(0%) brightness(1);transform:scale(1.04)}
+.pb{padding:26px 26px 22px;position:relative}
+.pnum{font-size:46px;font-weight:900;letter-spacing:-.04em;color:rgba(255,255,255,.035);position:absolute;top:6px;right:18px;line-height:1;user-select:none}
+.pcat{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gr2);margin-bottom:9px}
+.ptit{font-size:19px;font-weight:900;letter-spacing:-.02em;color:#fff;margin-bottom:9px}
+.pdesc{font-size:12px;line-height:1.75;color:var(--gr);margin-bottom:14px}
+.ptags{display:flex;flex-wrap:wrap;gap:6px}
+.ptg{padding:4px 10px;border:1px solid var(--b);border-radius:20px;font-size:9px;color:var(--gr2);transition:border-color .2s,color .2s}
+.pc:hover .ptg{border-color:var(--b2);color:#fff}
+.vlbl{display:flex;align-items:center;gap:4px;margin-top:13px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gr2);transition:color .2s}
+.pc:hover .vlbl{color:#fff}
+.awl{display:inline-flex;align-items:center;gap:4px;margin-top:9px;padding:4px 10px;border:1px solid rgba(255,255,255,.18);border-radius:20px;font-size:9px;font-weight:700;color:#fff}
+
+/* MODAL */
+#mover{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.9);backdrop-filter:blur(26px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:18px}
+#mover.open{opacity:1;pointer-events:all}
+.modal{background:#0e0e0e;border:1px solid var(--b2);border-radius:22px;width:100%;max-width:760px;max-height:90vh;overflow-y:auto;position:relative;transform:scale(.93) translateY(14px);transition:transform .38s cubic-bezier(.34,1.56,.64,1);scrollbar-width:thin;scrollbar-color:var(--b) transparent}
+#mover.open .modal{transform:scale(1) translateY(0)}
+.mcl{position:absolute;top:16px;right:16px;width:32px;height:32px;background:var(--g2);border:1px solid var(--b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;color:var(--gr);transition:background .2s,color .2s;z-index:10}
+.mcl:hover{background:#fff;color:#000}
+
+/* GALLERY */
+.mg{position:relative;overflow:hidden;background:#000;height:300px;border-radius:22px 22px 0 0}
+.gsl{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.gsi{min-width:100%;height:100%;position:relative}
+.gsi img{width:100%;height:100%;object-fit:cover;filter:brightness(.88)}
+.gcap{position:absolute;bottom:0;left:0;right:0;padding:14px 20px;background:linear-gradient(to top,rgba(0,0,0,.82),transparent);font-size:11px;color:rgba(255,255,255,.7);font-weight:500}
+.gbtn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;background:rgba(0,0,0,.58);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:17px;transition:background .2s;z-index:5}
+.gbtn:hover{background:rgba(255,255,255,.14)}
+.gprev{left:12px}.gnext{right:12px}
+.gdots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5}
+.gd{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.32);cursor:pointer;transition:background .2s,transform .2s}
+.gd.on{background:#fff;transform:scale(1.3)}
+/* THUMBNAIL STRIP */
+.gthumb-row{display:flex;gap:8px;padding:14px 20px 0;background:#0e0e0e}
+.gthumb{width:80px;height:54px;object-fit:cover;border-radius:8px;cursor:pointer;opacity:.45;border:1px solid transparent;transition:opacity .2s,border-color .2s}
+.gthumb.on{opacity:1;border-color:rgba(255,255,255,.55)}
+
+.mbody{padding:32px}
+.mcat{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gr2);margin-bottom:9px}
+.mtit{font-size:26px;font-weight:900;letter-spacing:-.03em;margin-bottom:22px}
+.msec{margin-bottom:22px}
+.mst{font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--gr2);margin-bottom:11px;padding-bottom:6px;border-bottom:1px solid var(--b)}
+.mtx{font-size:13px;line-height:1.8;color:var(--gr)}
+.mchips{display:flex;flex-wrap:wrap;gap:6px}
+.mc{padding:5px 11px;border:1px solid var(--b);border-radius:20px;font-size:11px;color:var(--gr);background:var(--g)}
+.mli{display:flex;gap:10px;font-size:12px;color:var(--gr);line-height:1.7;margin-bottom:6px}
+.mli::before{content:'→';color:rgba(255,255,255,.28);flex-shrink:0}
+
+/* EDUCATION */
+#education{background:var(--bg2)}
+.edgr{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1080px}
+.edc{background:var(--g);border:1px solid var(--b);border-radius:17px;padding:26px;backdrop-filter:blur(16px);transition:border-color .28s,transform .28s}
+.edc:hover{border-color:var(--b2);transform:translateY(-5px)}
+.edico{font-size:24px;margin-bottom:13px}
+.eddeg{font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3}
+.edsch{font-size:11px;color:var(--gr);margin-bottom:11px;line-height:1.5}
+.edps{display:flex;flex-wrap:wrap;gap:5px}
+.edp{padding:4px 10px;border:1px solid var(--b);border-radius:20px;font-size:9px;font-weight:700;letter-spacing:.07em;color:var(--gr2)}
+.edp.hi{border-color:rgba(255,255,255,.2);color:#fff}
+
+/* CERTS */
+#certifications{background:var(--bg)}
+.cgr{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px}
+.cc-card{background:var(--g);border:1px solid var(--b);border-radius:17px;padding:30px;backdrop-filter:blur(16px);position:relative;overflow:hidden;transition:border-color .28s,transform .28s}
+.cc-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 65% 35%,rgba(255,255,255,.04),transparent 60%)}
+.cc-card:hover{border-color:var(--b2);transform:translateY(-4px)}
+.cbg{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border:1px solid rgba(255,255,255,.13);border-radius:40px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.cbg::before{content:'';width:4px;height:4px;border-radius:50%;background:#fff;animation:bl 2s infinite}
+.cico{font-size:26px;margin-bottom:13px}
+.ctit{font-size:15px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3}
+.cdet{font-size:12px;color:var(--gr);margin-bottom:9px}
+.cplt{font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--gr2)}
+
+/* CONTACT */
+#contact{background:var(--bg2);text-align:center;position:relative;overflow:hidden}
+.cglow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:680px;height:380px;background:radial-gradient(ellipse,rgba(255,255,255,.033),transparent 70%);pointer-events:none}
+#contact .st{margin-bottom:12px}
+.csub{font-size:14px;font-weight:300;color:var(--gr);max-width:420px;margin:0 auto 44px;line-height:1.75}
+.ccrow{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-bottom:40px}
+.ccard{display:flex;align-items:center;gap:11px;padding:16px 26px;background:var(--g);border:1px solid var(--b);border-radius:15px;text-decoration:none;color:#fff;backdrop-filter:blur(16px);transition:border-color .28s,background .28s,transform .28s}
+.ccard:hover{border-color:var(--b2);background:var(--g2);transform:translateY(-3px)}
+.cico2{font-size:19px}
+.clbl{font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gr2);margin-bottom:2px}
+.cval{font-size:13px;font-weight:500;text-align:left}
+.cform{max-width:520px;margin:0 auto;background:var(--g);border:1px solid var(--b);border-radius:20px;padding:34px;backdrop-filter:blur(20px)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:11px}
+.fi{width:100%;padding:12px 15px;background:rgba(255,255,255,.04);border:1px solid var(--b);border-radius:10px;font-family:'Satoshi',sans-serif;font-size:13px;color:#fff;outline:none;transition:border-color .22s;display:block}
+.fi::placeholder{color:var(--gr2)}
+.fi:focus{border-color:var(--b2)}
+textarea.fi{resize:none;margin-bottom:11px}
+.fsb{width:100%;padding:14px;background:#fff;color:#000;border:none;border-radius:10px;font-family:'Satoshi',sans-serif;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .18s,box-shadow .28s}
+.fsb:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(255,255,255,.18)}
+.obadge{display:inline-flex;align-items:center;gap:7px;margin-top:32px;padding:8px 20px;border:1px solid var(--b2);border-radius:40px;font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--gr)}
+.obadge::before{content:'';width:5px;height:5px;border-radius:50%;background:#fff;animation:bl 2s infinite}
+
+footer{background:var(--bg);border-top:1px solid var(--b);padding:20px 54px;display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gr2)}
+footer a{color:var(--gr);text-decoration:none;transition:color .2s}
+footer a:hover{color:#fff}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .72s ease,transform .72s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.rvl{opacity:0;transform:translateX(-30px);transition:opacity .72s ease,transform .72s ease}
+.rvl.on{opacity:1;transform:translateX(0)}
+.rvr{opacity:0;transform:translateX(30px);transition:opacity .72s ease,transform .72s ease}
+.rvr.on{opacity:1;transform:translateX(0)}
+
+@media(max-width:940px){
+  nav{padding:0 18px}nav ul{display:none}
+  #hero{grid-template-columns:1fr;padding:96px 18px 54px;text-align:center}
+  .hl{padding:0;margin-bottom:32px}.hbio{max-width:100%}.hbtns{justify-content:center}
+  .hr-cards{display:none}
+  .pimg{width:250px;height:350px}.gr-ring,.ob{width:290px;height:290px}
+  section{padding:64px 18px}
+  .agrid,.ebox,.pgr,.edgr,.cgr,.frow{grid-template-columns:1fr}
+  .skgr{grid-template-columns:repeat(2,1fr)}
+  footer{flex-direction:column;gap:7px}
 }
-
-.gradient-btn:hover {
-  background: linear-gradient(135deg, #ff69b4, #8a2be2, #800080);
-  color: white !important;
-  text-decoration: none;
-
-}
-.view-btn {
-  background: linear-gradient(135deg, #ff69b4, #8a2be2, #800080);
-  color: white !important;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-}
-
-.view-btn:hover {
-  background: linear-gradient(135deg, #800080, #ff69b4, #8a2be2);
-  transform: scale(1.05);
-  color: white !important;
-  text-decoration: none;
-}
-
-
-  .login-wrapper {       
-  min-height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.left-section {
-  background: linear-gradient(to bottom right, lightpink, blueviolet);
-  color: white;
-  padding: 60px 30px;
-  min-height: 400px;
-}
-
-.right-section {
-  background-color: #f9f9f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
-
-.login-box {
-  width: 100%;
-  max-width: 400px;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-  .left-section {
-    display: none;
-  }
-  .right-section {
-    flex: 1 1 100%;
-    background: linear-gradient(to bottom right, blueviolet, black);
-  }
-  .login-box {
-    background: transparent;
-    box-shadow: none;
-    color: white;
-  }
-  .login-box .form-control {
-    background: white;
-    color: black;
-  }
-}
-
-.btn-primary {
-  background-color: black;
-  border: none;
-}
-
-  body {
-  background: radial-gradient(circle at top left, #2b1055, #1f0036, #0a001f);
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
-}
-.typing-navbar {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.typing-heading {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-}
-
-/* ✅ Restrict max size on large screens */
-@media (min-width: 1200px) {
-  .typing-heading {
-    font-size: 60px; /* max cap for large desktops */
-  }
-}
-
-/* ✅ Adjust size for very small screens */
-@media (max-width: 576px) {
-  .typing-heading {
-    font-size: 8vw;
-    text-align: center;
-  }
-}
-
-
-  .card{
-     padding: 10px;
-  border-radius: 16px;
-  background: #0d0d0d;
-  color: white;
-  border: 3px solid transparent;
-  background-image: 
-    linear-gradient(#0d0d0d, #0d0d0d),
-    linear-gradient(45deg, #ff00ff, #8a2be2, #00ffff);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4),
-              0 0 30px rgba(138, 43, 226, 0.5),
-              0 0 40px rgba(0, 255, 255, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.glow-card:hover {
-  transform: scale(1.05);
-}
-  }
-    .hero {
-      background: linear-gradient(to bottom right, lightpink, blueviolet);
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    .card-body.animate {
-      animation: slideUp 1.5s ease-out;
-    }
-
-    img.animate {
-      animation: zoomIn 1.2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes zoomIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
+</style>
+</head>
 <body>
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm bg-dark" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
-  <div class="container-fluid">
+<div id="cur"></div><div id="cur-r"></div><div id="prog"></div>
 
-    <!-- Brand -->
-    <a class="navbar-brand text-white fw-bold typing-navbar d-flex align-items-center" href="#">
-      <img src="https://i.postimg.cc/138f5HbF/Whats-App-Image-2025-07-08-at-01-35-05-61afe6d4.jpg" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
-      <span id="typing-name"></span>
-    </a>
-
-    <!-- Toggler -->
-    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#projects">Project</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#skill">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
+<nav>
+  <a href="#hero" class="nl">Stereena</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:stereenapatrick@gmail.com" class="nc">Hire Me</a>
 </nav>
 
-
-  <section id=home class="hero py-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-8 order-md-1 text-center text-md-start">
-          <h1 id="typing-title"
-    class="typing-heading text-center mt-5"
-    style="font-size: clamp(1.8rem, 5vw, 3.5rem);">
-</h1>
-         
-           <p>I’m a Web Developer in training, currently building a strong foundation in HTML, CSS, Bootstrap, JavaScript, Python, and SQL. I'm actively expanding my skills into React.js and Django as I progress through a full stack development course. I enjoy crafting clean, responsive user interfaces and bringing them to life with functionality and logic.
-                 I’m passionate about learning modern technologies and excited to grow as a developer by building real-world projects and collaborating on impactful web applications.</p>
-                 <!--3. MODIFIED "HIRE ME" BUTTON -->
-<a href="#" class="gradient-btn me-2" data-bs-toggle="modal" data-bs-target="#hireModal">Hire Me</a>
-<!--resume button-->
-<a href="#" class="gradient-btn dropdown-toggle" data-bs-toggle="modal" data-bs-target="#resumeModal">Resume</a>
-
-<!-- 📌 5. HIRE ME MODAL -->
-<div class="modal fade" id="hireModal" tabindex="-1" aria-labelledby="hireModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title">Let's Work Together</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p>I'm excited to work on meaningful projects. You can reach me at:</p>
-        <ul>
-          <li>Email: <strong>stereenapatrick@gmail.com</strong></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/stereena" target="_blank" style="color:lightblue;">stereena</a></li>
-        </ul>
-      </div>
+<section id="hero">
+  <div class="hgrid"></div><div class="hrad"></div>
+  <div class="hl">
+    <div class="hbadge"><span class="hbdot"></span>Digital Marketing Associate</div>
+    <h1>Stereena<br/>Mary<br/>Patrick</h1>
+    <p class="hsub">SEO &nbsp;·&nbsp; Outreach &nbsp;·&nbsp; Lead Gen &nbsp;·&nbsp; Content</p>
+    <p class="hbio">Helping brands grow through SEO, outreach strategies, lead management, and customer-focused digital marketing solutions.</p>
+    <div class="hbtns">
+      <a href="#projects" class="bw">View Projects</a>
+      <a href="#contact" class="bg">Contact Me</a>
     </div>
   </div>
-</div>
-
-<!-- 📌 6. RESUME MODAL (with Google Drive Preview & Download Option) -->
-<div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <iframe src="https://drive.google.com/file/d/1wNvycb50jtFiwu2VaT9zCJyBy-ufecv2/preview?usp=sharing" width="100%" height="600px" style="border: none;"></iframe>
-        <div class="text-center mt-3">
-          <a href="https://drive.google.com/file/d/1wNvycb50jtFiwu2VaT9zCJyBy-ufecv2/preview?usp=sharing" target="_blank" class="btn btn-outline-light">Download Resume</a>
-        </div>
-      </div>
+  <div class="hcenter">
+    <div class="pw">
+      <div class="gr-ring"></div><div class="ob"></div>
+      <img src="https://plain-apac-prod-public.komododecks.com/202605/09/iLpGDrgass0RHBuVwMVf/image.jpg"
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80'"
+           alt="Stereena Mary Patrick" class="pimg"/>
+      <div class="pfl"></div>
     </div>
   </div>
-</div>
-</div>
-        <div class="col-md-4 text-center mt-6 pt-5">
-            <img src="https://i.postimg.cc/hjTCFVSW/Whats-App-Image-2025-07-07-at-13-14-35-3e50ea19.jpg" class="rounded img-fluid" alt = "Responsive Image" style="max-width: 100%; height: auto;" > 
-            </div>
-      </div>
-    </div>
-  </section>
-  <section id="about" class="py-5" style="background:#C9A0DC">
-  <div class="container">
-    <h2 class="text-center mb-4" style="color:white;">ABOUT ME</h2>
-    <div class="row align-items-stretch">
-      
-      <!-- Left Column: Text Content -->
-      <!-- Right Column: Image (now appears first / on left) -->
-<div class="col-md-5 d-flex">
-  <img src="https://t4.ftcdn.net/jpg/07/44/39/67/360_F_744396718_RZ6UK8azeTMXPA5dSYVPrRGVNUmK2FMf.jpg" class="img-fluid rounded shadow w-100" style="object-fit: cover;">
-</div>
-
-<!-- Left Column: Text Content (now appears second / on right) -->
-<div class="col-md-7">
-  <div class="card shadow border-0">
-    <div class="card-body p-4" style="color:white; background: linear-gradient(135deg, #FF69B4, #8A2BE2);">
-      <p class="lead">
-        Hello! I'm <strong>Stereena Mary Patrick</strong>, a B.Tech graduate in <strong>Electronics and Communication Engineering</strong> with a strong interest in software development.
-      </p>
-      <p>
-        I'm currently enrolled in a <strong>Full Stack Python Development</strong> course and learning HTML, CSS, JavaScript, Bootstrap, Python, SQL — while diving into Django, React, and Git.
-      </p>
-      <p>
-        I’m also exploring <strong>Digital Marketing</strong> and <strong>Generative AI</strong> to expand my versatility in tech.
-      </p>
-      <p>
-        My goal is to become a <strong>skilled web developer</strong> contributing to real-world software projects.
-      </p>
-    </div>
+  <div class="hr-cards">
+    <div class="ec" style="--d:4s;--dl:0s"><span class="ecdot"></span>SEO Optimization</div>
+    <div class="ec" style="--d:4.6s;--dl:.3s"><span class="ecdot"></span>Meta Ads Manager</div>
+    <div class="ec" style="--d:5.2s;--dl:.6s"><span class="ecdot"></span>Lead Management</div>
+    <div class="ec" style="--d:4.3s;--dl:.9s"><span class="ecdot"></span>Customer Engagement</div>
+    <div class="ec" style="--d:4.9s;--dl:.2s"><span class="ecdot"></span>Outreach Strategy</div>
+    <div class="ec" style="--d:5.5s;--dl:.5s"><span class="ecdot"></span>Google Analytics</div>
   </div>
-</div>
+</section>
 
-
+<section id="about">
+  <div class="sl">Who I Am</div><h2 class="st">About</h2>
+  <div class="agrid">
+    <div class="rvl">
+      <p class="at">I'm a <strong>Digital Marketing Associate</strong> with hands-on experience in SEO, outreach, lead generation, and customer engagement. My background in <strong>Electronics & Communication Engineering</strong> gives me a rare analytical edge — I understand technical systems, debug tracking issues, and base every decision on data.</p>
+      <p class="at">I've helped early-stage startups improve digital visibility, manage Meta Ads leads, build backlink profiles, and convert prospects into loyal customers across international markets.</p>
+      <div class="srow">
+        <div class="sb"><div class="sn" data-target="4">0</div><div class="slb">Projects</div></div>
+        <div class="sb"><div class="sn" data-target="98" data-suf="%">0</div><div class="slb">Top Score</div></div>
+        <div class="sb"><div class="sn" data-target="3">0</div><div class="slb">Brands</div></div>
+      </div>
+      <ul class="il">
+        <li class="ii"><span class="ik">Location</span><span class="iv">Thiruvananthapuram, Kerala</span></li>
+        <li class="ii"><span class="ik">Email</span><span class="iv"><a href="mailto:stereenapatrick@gmail.com">stereenapatrick@gmail.com</a></span></li>
+        <li class="ii"><span class="ik">Phone</span><span class="iv"><a href="tel:+918891582485">+91 88915 82485</a></span></li>
+        <li class="ii"><span class="ik">LinkedIn</span><span class="iv"><a href="https://www.linkedin.com/in/stereena/" target="_blank">linkedin.com/in/stereena</a></span></li>
+        <li class="ii"><span class="ik">Status</span><span class="iv" style="color:#fff">Open to Opportunities</span></li>
+      </ul>
+    </div>
+    <div class="rvr" style="background:var(--g);border:1px solid var(--b);border-radius:20px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px;gap:16px">
+      <div style="font-size:52px;font-weight:900;letter-spacing:-.04em;line-height:1">DMA</div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gr)">Digital Marketing Associate</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:8px">
+        <span style="padding:5px 12px;border:1px solid var(--b2);border-radius:20px;font-size:10px;color:var(--gr)">SEO</span>
+        <span style="padding:5px 12px;border:1px solid var(--b2);border-radius:20px;font-size:10px;color:var(--gr)">Meta Ads</span>
+        <span style="padding:5px 12px;border:1px solid var(--b2);border-radius:20px;font-size:10px;color:var(--gr)">Outreach</span>
+        <span style="padding:5px 12px;border:1px solid var(--b2);border-radius:20px;font-size:10px;color:var(--gr)">Content</span>
+        <span style="padding:5px 12px;border:1px solid var(--b2);border-radius:20px;font-size:10px;color:var(--gr)">Analytics</span>
+        <span style="padding:5px 12px;border:1px solid var(--b2);border-radius:20px;font-size:10px;color:var(--gr)">Lead Gen</span>
+      </div>
     </div>
   </div>
 </section>
-<section id="projects" class="py-5 " style="background:linear-gradient(to left, #FFC0CB, #BA55D3, #800080);">
-  <div class="container">
-    <h2 class="text-center mb-5" style="color:project;">Projects</h2>
 
-    <!-- ⚙️ Electronics Projects -->
-
-    <h4 class="mb-4" style="color:white;">⚙️ Electronics Projects</h4>
-    <div class="row g-4 mb-5">
-      
-      <!-- Pelican Crossing -->
-
-      <div class="col-md-6">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="https://www.driving-lessons-kettering.co.uk/wp-content/uploads/2020/01/pelican-crossing-1.jpg" class="card-img-top" alt="Pelican Crossing Project"  style="height: 180px; object-fit: cover;" >
-          <div class="card-body">
-            <h5 class="card-title">Pelican Crossing System</h5>
-            <p class="card-text">Arduino-based pedestrian crossing using IR sensors for safe and smart traffic control.</p>
-            <p><strong>Tools:</strong> Arduino, IR Sensors, C</p>
-            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#pelicanModal">View Details</a>
-
-          </div>
-        </div>
-      </div>
-      <!-- Pelican Crossing Modal -->
-<div class="modal fade" id="pelicanModal" tabindex="-1" aria-labelledby="pelicanModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="pelicanModalLabel">Pelican Crossing System – Project PDF</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <iframe src="https://drive.google.com/file/d/1YbHepom4TYGC5GVBTwIvEeUCzGUL36uf/preview" width="100%" height="600px" style="border: none;"></iframe>
-
-      </div>
+<section id="experience">
+  <div class="sl">Work History</div><h2 class="st">Experience</h2>
+  <div class="ebox rv">
+    <div>
+      <div class="eco">Orderstack</div>
+      <div class="erl">Digital Marketing Intern</div>
+      <div class="edt">November 2025 – Present</div>
+      <div class="lb">Currently Active</div>
     </div>
+    <ul class="eli-list">
+      <li class="eli">Led on-page SEO including content optimization, keyword implementation and website structural improvements across all pages.</li>
+      <li class="eli">Conducted in-depth keyword research using Ubersuggest to drive blog strategy and organic traffic growth.</li>
+      <li class="eli">Created SEO-focused articles, blogs, and marketing content aligned with brand voice and campaign goals.</li>
+      <li class="eli">Managed lead data and tracking workflows using Meta Ads Manager, bridging marketing and sales operations.</li>
+      <li class="eli">Coordinated with sales and technical teams for lead follow-ups, issue resolution and campaign reporting.</li>
+      <li class="eli">Reported website issues — broken links, tracking bugs, loading errors — coordinating with technical stakeholders.</li>
+      <li class="eli">Assisted in customer engagement, social media coordination and ad-content planning activities.</li>
+    </ul>
   </div>
-</div>
+</section>
 
-      <!-- Railway Monitoring -->
-
-      <div class="col-md-6">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="https://www.selectravision.com/photos/products/track/trackT%20-%20measuring%20tracks%20-%20real.jpg" class="card-img-top" alt="Railway Track Monitoring"   style="height: 180px; object-fit: cover;" >
-          <div class="card-body">
-            <h5 class="card-title">Railway Track Monitoring Tool</h5>
-            <p class="card-text">Real-time railway defect detection with GPS alert system for enhanced safety and monitoring.</p>
-            <p><strong>Tools:</strong> GPS, Sensors, Embedded</p>
-            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#rtmtModal">View Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- RT-MT Modal -->
-<div class="modal fade" id="rtmtModal" tabindex="-1" aria-labelledby="rtmtModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="rtmtModalLabel">Railway Track Monitoring Tool – Project PDF</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <iframe src="https://drive.google.com/file/d/13a0zUAwk8h888NA--A9iFIH1k9LJUs-p/preview" width="100%" height="600px" style="border: none;"></iframe>
-
-      </div>
-    </div>
+<section id="skills">
+  <div class="sl">Expertise</div><h2 class="st">Skills</h2>
+  <div class="skgr">
+    <div class="skc rv" style="--d:5s;--dl:0s"><div class="ski">🔍</div><div class="skn">SEO Optimization</div><div class="skbar"><div class="skf" data-w="85"></div></div></div>
+    <div class="skc rv" style="--d:4.5s;--dl:.1s"><div class="ski">📊</div><div class="skn">Google Analytics</div><div class="skbar"><div class="skf" data-w="78"></div></div></div>
+    <div class="skc rv" style="--d:5.5s;--dl:.2s"><div class="ski">🎯</div><div class="skn">Meta Ads Manager</div><div class="skbar"><div class="skf" data-w="80"></div></div></div>
+    <div class="skc rv" style="--d:4.8s;--dl:.3s"><div class="ski">✍️</div><div class="skn">Content Writing</div><div class="skbar"><div class="skf" data-w="88"></div></div></div>
+    <div class="skc rv" style="--d:5.2s;--dl:.15s"><div class="ski">🔑</div><div class="skn">Ubersuggest</div><div class="skbar"><div class="skf" data-w="82"></div></div></div>
+    <div class="skc rv" style="--d:4.6s;--dl:.25s"><div class="ski">🚀</div><div class="skn">Lead Generation</div><div class="skbar"><div class="skf" data-w="83"></div></div></div>
+    <div class="skc rv" style="--d:5.1s;--dl:.35s"><div class="ski">💼</div><div class="skn">LinkedIn Outreach</div><div class="skbar"><div class="skf" data-w="79"></div></div></div>
+    <div class="skc rv" style="--d:4.9s;--dl:.4s"><div class="ski">📈</div><div class="skn">Performance Marketing</div><div class="skbar"><div class="skf" data-w="75"></div></div></div>
   </div>
-</div>
+</section>
 
-    <!-- 💻 Web Development Projects -->
-
-    <h4 class="mb-4" style="color:white;">💻 Web Development Projects</h4>
-    <div class="row g-4">
-
-      <!-- Portfolio Website (Current Project) -->
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title">Personal Portfolio Website</h5>
-            <p class="card-text">A responsive and interactive personal portfolio showcasing my skills, projects, and career journey. Built using modern web technologies.</p>
-            <p><strong>Tools:</strong> HTML, CSS, Bootstrap, JavaScript</p>
-            <a href="#" class="view-btn">Live Preview</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Login Page -->
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title">Responsive Login Page</h5>
-            <p class="card-text">Mobile-first login form styled with media queries to adapt seamlessly to different devices.</p>
-            <p><strong>Tools:</strong> HTML, CSS</p>
-            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#loginModal">View Demo</a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Login Page Modal -->
-
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <div class="login-wrapper d-flex flex-wrap w-100">
-          
-          <!-- Left Section (Hidden on Mobile) -->
-          <div class="col-md-6 left-section d-flex flex-column justify-content-center align-items-center">
-            <h2 class="display-5 fw-bold">Welcome Back!</h2>
-            <p class="lead text-center">Join the community of learners and creators.<br>Start building your future.</p>
-          </div>
-
-          <!-- Right Login Form -->
-          <div class="col-md-6 right-section">
-            <div class="login-box">
-              <h3 class="text-center mb-4">Login</h3>
-              <form onsubmit="event.preventDefault(); alert('Login form submitted!');">
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email">
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <div class="d-grid">
-                  <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-              </form>
-            </div>
-          </div>
-
-        </div>
+<section id="projects">
+  <div class="sl">Portfolio</div><h2 class="st">Projects</h2>
+  <div class="pgr">
+    <div class="pc rv" onclick="openM('p1')">
+      <img class="pth" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Interview Better"/>
+      <div class="pb">
+        <div class="pnum">01</div>
+        <div class="pcat">SEO · Lead Management · Customer Engagement</div>
+        <div class="ptit">Interview Better</div>
+        <p class="pdesc">Managed Meta Ads leads, SEO content, ATS resume services and customer communication across marketing and sales teams.</p>
+        <div class="ptags"><span class="ptg">SEO</span><span class="ptg">Lead Management</span><span class="ptg">Meta Ads</span><span class="ptg">Content</span></div>
+        <div class="vlbl">View Case Study →</div>
       </div>
     </div>
-  </div>
-</div>
-
-
-      <!-- Calculator -->
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title">JavaScript Calculator</h5>
-            <p class="card-text">A basic calculator that performs all four arithmetic operations using custom JS functions.</p>
-            <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
-            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#calculatorModal">View Demo</a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Calculator Modal -->
-
-<div class="modal fade" id="calculatorModal" tabindex="-1" aria-labelledby="calculatorModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="calculatorModalLabel">Calculator</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-        <!-- Calculator Form -->
-        <div class="container mb-3">
-          <div class="row g-2">
-            <div class="col-6">
-              <input type="number" id="num1" class="form-control" placeholder="Enter first number">
-            </div>
-            <div class="col-6">
-              <input type="number" id="num2" class="form-control" placeholder="Enter second number">
-            </div>
-            <div class="col-6">
-              <select id="operator" class="form-select mt-2">
-                <option value="+">Add (+)</option>
-                <option value="-">Subtract (-)</option>
-                <option value="*">Multiply (*)</option>
-                <option value="/">Divide (/)</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <button class="btn btn-success mt-2 w-100" onclick="calculate()">Calculate</button>
-            </div>
-          </div>
-          <div class="result mt-3 fs-5 fw-bold text-white" id="finalResult"></div>
-        </div>
-
+    <div class="pc rv" onclick="openM('p2')">
+      <img class="pth" src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80" alt="FoundersBuzz"/>
+      <div class="pb">
+        <div class="pnum">02</div>
+        <div class="pcat">Outreach · SEO · Business Development</div>
+        <div class="ptit">FoundersBuzz</div>
+        <p class="pdesc">Led international outreach targeting US & Canada clients via cold email, LinkedIn, creator research and backlink building.</p>
+        <div class="ptags"><span class="ptg">Cold Outreach</span><span class="ptg">LinkedIn</span><span class="ptg">SEO</span><span class="ptg">Backlinks</span></div>
+        <div class="vlbl">View Case Study →</div>
       </div>
     </div>
-  </div>
-</div>
-
-
-      <!-- Lottery Draw -->
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title">Lottery Draw Web App</h5>
-            <p class="card-text">Random winner generator styled with Bootstrap modals and colorful console feedback.</p>
-            <p><strong>Tools:</strong> JavaScript, Bootstrap</p>
-            <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#lotteryModal">View Demo</a>
-
-          </div>
-        </div>
+    <div class="pc rv" onclick="openM('p3')">
+      <img class="pth" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80" alt="AI Railway"/>
+      <div class="pb">
+        <div class="pnum">03</div>
+        <div class="pcat">AI · Python · Computer Vision</div>
+        <div class="ptit">AI Railway Track Monitoring</div>
+        <p class="pdesc">Award-winning AI defect detection system using YOLOv8, Raspberry Pi, GPS and GSM for real-time railway safety alerts.</p>
+        <div class="ptags"><span class="ptg">Python</span><span class="ptg">YOLOv8</span><span class="ptg">Raspberry Pi</span><span class="ptg">GPS/GSM</span></div>
+        <div class="awl">🏆 Best Project — PRUDENTIA 2025</div>
+        <div class="vlbl">View Case Study →</div>
       </div>
-
+    </div>
+    <div class="pc rv" onclick="openM('p4')">
+      <img class="pth" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Pelican Crossing"/>
+      <div class="pb">
+        <div class="pnum">04</div>
+        <div class="pcat">Embedded Systems · Arduino</div>
+        <div class="ptit">Pelican Crossing System</div>
+        <p class="pdesc">Smart pedestrian crossing control system using Arduino Uno and IR sensors with C-programmed traffic signal logic.</p>
+        <div class="ptags"><span class="ptg">Arduino</span><span class="ptg">C Programming</span><span class="ptg">IR Sensors</span><span class="ptg">Embedded</span></div>
+        <div class="vlbl">View Case Study →</div>
+      </div>
     </div>
   </div>
 </section>
-<!-- Lottery Draw Modal -->
 
-<div class="modal fade" id="lotteryModal" tabindex="-1" aria-labelledby="lotteryModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="lotteryModalLabel">🎉 Lottery Draw</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <button class="btn btn-danger mb-3" onclick="drawLottery()">Draw Winner</button>
-        <div id="winnerText" class="fs-5 mt-3"></div>
-      </div>
+<section id="certifications">
+  <div class="sl">Learning</div><h2 class="st">Certifications</h2>
+  <div class="cgr">
+    <div class="cc-card rv">
+      <div class="cbg">Completed</div>
+      <div class="cico">📊</div>
+      <div class="ctit">Full Digital Marketing Course 2026: PPC, SEO, SMM, GTM, GA4</div>
+      <div class="cdet">Paid and organic marketing channels, analytics and tag management.</div>
+      <div class="cplt">Udemy · 2025</div>
+    </div>
+    <div class="cc-card rv">
+      <div class="cbg">Currently Learning</div>
+      <div class="cico">🤖</div>
+      <div class="ctit">Performance Marketing & AI Tools for Digital Marketing</div>
+      <div class="cdet">AI-powered marketing tools, campaign strategies and outreach automation.</div>
+      <div class="cplt">Udemy · Ongoing</div>
     </div>
   </div>
-</div>
-
-<!-- Winner Modal (Nested) -->
-<div class="modal fade" id="winnerModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-success text-white">
-      <div class="modal-header">
-        <h5 class="modal-title">🏆 Winner</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body" id="modalWinnerText"></div>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Skill Section -->
-
-<section id="skill" class="container-fluid mb-0 pb-0" style="background: linear-gradient(to bottom right, lightpink, blueviolet);">
-  <h2 class="section-title text-white pt-4">Skills</h2>
-  <ul class="text-white pb-3">
-    <li><strong>Frontend:</strong> HTML, CSS, Bootstrap, JavaScript</li>
-    <li><strong>Backend:</strong> Python, SQL (PostgreSQL)</li>
-    <li><strong>Currently Learning:</strong> Django, React, Git</li>
-  </ul>
 </section>
 
-<!-- Contact Section -->
-<div class="card border-0 rounded-0 mb-0" id="contact" style="background:linear-gradient(to bottom right, lightpink, blueviolet);">
-  <h3 class="mb-0 px-3 py-3" style="display: flex; align-items: center; gap: 10px; color: white;">
-    Connect with me -
-    <span class="social-icons" style="display: flex; gap: 15px; margin-left: 10px;">
-      <a href="https://github.com/Stereena" target="_blank">
-        <i class="fab fa-github" style="font-size: 28px; color:white;"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/stereena" target="_blank">
-        <i class="fab fa-linkedin" style="font-size: 28px; color:white;"></i>
-      </a>
-      <a href="mailto:stereenapatrick@gmail.com" target="_blank">
-        <i class="fas fa-envelope" style="font-size: 28px; color:white;"></i>
-      </a>
-      <a href="https://www.instagram.com/stereenapatrick/?hl=en" target="_blank">
-        <i class="fab fa-instagram" style="font-size: 28px; color:white;"></i>
-      </a>
-    </span>
-  </h3>
+<section id="education">
+  <div class="sl">Academic Background</div><h2 class="st">Education</h2>
+  <div class="edgr">
+    <div class="edc rv">
+      <div class="edico">🎓</div>
+      <div class="eddeg">B.Tech — Electronics & Communication Engineering</div>
+      <div class="edsch">Sree Chitra Thirunal College of Engineering, Thiruvananthapuram</div>
+      <div class="edps"><span class="edp">Nov 2021 – May 2025</span><span class="edp hi">CGPA 7.16</span></div>
+    </div>
+    <div class="edc rv">
+      <div class="edico">📚</div>
+      <div class="eddeg">DHSE Kerala — Biology Science (Class XII)</div>
+      <div class="edsch">Holy Angel's Convent Higher Secondary School</div>
+      <div class="edps"><span class="edp">Jun 2020 – Mar 2021</span><span class="edp hi">96.6%</span></div>
+    </div>
+    <div class="edc rv">
+      <div class="edico">🏫</div>
+      <div class="eddeg">DHSE Kerala — Class X</div>
+      <div class="edsch">ST. Roch's Convent High School</div>
+      <div class="edps"><span class="edp">Jun 2019 – Mar 2020</span><span class="edp hi">98.8%</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cglow"></div>
+  <div class="sl" style="justify-content:center">Get In Touch</div>
+  <h2 class="st" style="margin-bottom:12px">Let's Work<br/>Together</h2>
+  <p class="csub">Open to full-time roles, freelance projects, and startup growth opportunities in digital marketing, SEO, and outreach.</p>
+  <div class="ccrow">
+    <a href="mailto:stereenapatrick@gmail.com" class="ccard"><span class="cico2">✉️</span><div><div class="clbl">Email</div><div class="cval">stereenapatrick@gmail.com</div></div></a>
+    <a href="https://www.linkedin.com/in/stereena/" target="_blank" class="ccard"><span class="cico2">💼</span><div><div class="clbl">LinkedIn</div><div class="cval">linkedin.com/in/stereena</div></div></a>
+    <a href="https://wa.me/918891582485" target="_blank" class="ccard"><span class="cico2">💬</span><div><div class="clbl">WhatsApp</div><div class="cval">+91 88915 82485</div></div></a>
+  </div>
+  <div class="cform rv">
+    <div class="frow">
+      <input class="fi" type="text" placeholder="Your Name"/>
+      <input class="fi" type="email" placeholder="Your Email"/>
+    </div>
+    <input class="fi" type="text" placeholder="Subject" style="margin-bottom:11px"/>
+    <textarea class="fi" rows="4" placeholder="Your Message"></textarea>
+    <button class="fsb" onclick="subForm(this)">Send Message</button>
+  </div>
+  <div class="obadge">Available for opportunities</div>
+</section>
+
+<footer>
+  <span>© 2025 Stereena Mary Patrick</span>
+  <span><a href="mailto:stereenapatrick@gmail.com">stereenapatrick@gmail.com</a></span>
+</footer>
+
+<!-- MODAL -->
+<div id="mover" onclick="closeOut(event)">
+  <div class="modal" id="mbox">
+    <div class="mcl" onclick="closeM()">✕</div>
+    <div class="mg">
+      <div class="gsl" id="gsl"></div>
+      <div class="gbtn gprev" onclick="slide(-1)">&#8249;</div>
+      <div class="gbtn gnext" onclick="slide(1)">&#8250;</div>
+      <div class="gdots" id="gdots"></div>
+    </div>
+    <!-- thumbnail strip -->
+    <div class="gthumb-row" id="gthumb-row"></div>
+    <div class="mbody" id="mbody"></div>
+  </div>
 </div>
 
-
-  <footer class="bg-dark text-white text-center py-2" >
-    <p>&copy; 2025 Stereena Patrick. </p>
-  </footer>
-  <script>
-  // Typing for "Welcome to my Portfolio"
-  const title = "Welcome to my Portfolio";
-  let i = 0;
-  function typeTitle() {
-    if (i < title.length) {
-      document.getElementById("typing-title").textContent += title.charAt(i);
-      i++;
-      setTimeout(typeTitle, 100);
-    }
-  }
-  typeTitle();
-
-  // Typing for navbar name
-  const nameText = "Stereena";
-  let j = 0;
-  function typeName() {
-    if (j < nameText.length) {
-      document.getElementById("typing-name").textContent += nameText.charAt(j);
-      j++;
-      setTimeout(typeName, 150);
-    }
-  }
-  typeName();
-</script>
 <script>
-  function adjustHeroPadding() {
-    const navbar = document.querySelector('.navbar');
-    const home = document.querySelector('#home');
+// CURSOR
+const cur=document.getElementById('cur'),cr=document.getElementById('cur-r');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';cr.style.left=e.clientX+'px';cr.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button,.pc,.skc,.cc-card,.ccard,.edc,.mcl,.gbtn,.gthumb').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+});
 
-    if (navbar && home) {
-      const navHeight = navbar.offsetHeight;
-      home.style.paddingTop = (navHeight + 20) + 'px'; // 20px extra space
-    }
-  }
+// PROGRESS
+window.addEventListener('scroll',()=>{document.getElementById('prog').style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%'});
 
-  window.addEventListener('DOMContentLoaded', adjustHeroPadding);
-  window.addEventListener('resize', adjustHeroPadding);
+// REVEAL
+const robs=new IntersectionObserver(es=>es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*65)}),{threshold:.1});
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>robs.observe(el));
+
+// COUNTERS
+const cobs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){const el=e.target,t=+el.dataset.target,s=el.dataset.suf||'';let c=0;const st=Math.ceil(t/40);const iv=setInterval(()=>{c=Math.min(c+st,t);el.textContent=c+s;if(c>=t)clearInterval(iv)},36);cobs.unobserve(el)}
+}),{threshold:.5});
+document.querySelectorAll('[data-target]').forEach(el=>cobs.observe(el));
+
+// SKILL BARS
+const bobs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.style.width=e.target.dataset.w+'%',180);bobs.unobserve(e.target)}}),{threshold:.3});
+document.querySelectorAll('.skf').forEach(el=>bobs.observe(el));
+
+// SKILL GLOW
+document.querySelectorAll('.skc').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%')})});
+
+// MODAL DATA
+const MD={
+  p1:{cat:'SEO · Lead Management · Customer Engagement',title:'Interview Better',award:null,
+    desc:'A career services platform offering ATS resume writing, interview prep, and job-seeker support. I worked across SEO, Meta Ads lead management, and customer communication.',
+    slides:[
+      {img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=85',cap:'SEO Dashboard & Keyword Analytics'},
+      {img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=85',cap:'Meta Ads Lead Management Interface'},
+      {img:'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=900&q=85',cap:'Content Strategy & Blog Performance'},
+    ],
+    resp:['Managed and categorized leads generated through Meta Ads campaigns','Coordinated between marketing and sales teams for follow-ups and conversions','Assisted users with ATS resume writing services and slot booking coordination','Wrote SEO-focused articles, keyword-optimized blogs and promotional content','Reported and coordinated resolution of technical issues with project managers'],
+    tools:['Meta Ads Manager','Google Search Console','Ubersuggest','SEO Writing','HubSpot CRM'],
+    skills:['SEO','Lead Management','Customer Communication','Content Writing','Campaign Coordination'],
+  },
+  p2:{cat:'Outreach · SEO · Business Development',title:'FoundersBuzz',award:null,
+    desc:'A founder and creator networking platform. I led international client outreach, backlink building, and SEO strategies to grow reach with US and Canada-based clients.',
+    slides:[
+      {img:'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=900&q=85',cap:'LinkedIn Outreach & Creator Research'},
+      {img:'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&q=85',cap:'Cold Email Campaign Dashboard'},
+      {img:'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=900&q=85',cap:'Backlink Building & SEO Metrics'},
+    ],
+    resp:['Developed outreach strategies targeting international clients from the US and Canada','Conducted cold email campaigns and LinkedIn direct engagement with creators','Researched businesses for partnership and platform development opportunities','Built backlinks via forums, social platforms, and external websites','Performed keyword research and supported SEO to grow organic audience'],
+    tools:['LinkedIn Sales Navigator','Cold Email Tools','Ubersuggest','Ahrefs','Google Analytics'],
+    skills:['Cold Outreach','LinkedIn Networking','SEO','Business Development','Backlink Building'],
+  },
+  p3:{cat:'AI · Python · Computer Vision',title:'AI Railway Track Monitoring',award:'🏆 Best Project Award — PRUDENTIA 2025',
+    desc:'An AI-powered railway defect detection system that processes real-time camera feeds using YOLOv8 to detect track anomalies and dispatch GPS-tagged alerts via GSM.',
+    slides:[
+      {img:'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=900&q=85',cap:'YOLOv8 Object Detection on Railway Feed'},
+      {img:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=85',cap:'Raspberry Pi + GPS/GSM Hardware Setup'},
+      {img:'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=85',cap:'Real-time Alert Dashboard'},
+    ],
+    resp:['Designed and developed the solution using Python and YOLOv8 AI models','Implemented real-time image processing for railway track defect detection','Applied algorithms and data structures for efficient real-time data analysis','Integrated GPS and GSM modules for automated location-tagged alerts','Followed full SDLC from requirement analysis to testing and deployment'],
+    tools:['Python','YOLOv8','Raspberry Pi','GPS Module','GSM Module','OpenCV'],
+    skills:['Python','Computer Vision','AI/ML','Problem Solving','Embedded Systems','Signal Processing'],
+  },
+  p4:{cat:'Embedded Systems · Arduino',title:'Pelican Crossing System',award:null,
+    desc:'A smart pedestrian crossing control system that uses IR sensor-based detection to dynamically manage traffic signal timing, improving pedestrian safety at intersections.',
+    slides:[
+      {img:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=85',cap:'Arduino Uno & IR Sensor Circuit'},
+      {img:'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=900&q=85',cap:'Traffic Signal Logic Implementation'},
+      {img:'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=85',cap:'System Testing & Real-time Debugging'},
+    ],
+    resp:['Developed the full pedestrian crossing control system using Arduino Uno','Implemented IR sensor-based vehicle and pedestrian detection logic','Programmed traffic signal control algorithms using C','Performed real-time testing and debugging for reliable operation','Documented system architecture and testing results'],
+    tools:['Arduino Uno','IR Sensors','C Programming','Embedded C','Multimeter'],
+    skills:['Arduino','C Programming','Sensor Integration','Embedded Systems','Circuit Design'],
+  },
+};
+
+let cs=0,ts=0;
+function openM(id){
+  const d=MD[id];if(!d)return;
+  cs=0;ts=d.slides.length;
+  const gsl=document.getElementById('gsl'),gd=document.getElementById('gdots'),gtr=document.getElementById('gthumb-row');
+  gsl.style.transform='translateX(0)';
+  gsl.innerHTML=d.slides.map(s=>`<div class="gsi"><img src="${s.img}" alt="${s.cap}" loading="lazy"/><div class="gcap">${s.cap}</div></div>`).join('');
+  gd.innerHTML=d.slides.map((_,i)=>`<div class="gd${i===0?' on':''}" onclick="goS(${i})"></div>`).join('');
+  gtr.innerHTML=d.slides.map((s,i)=>`<img class="gthumb${i===0?' on':''}" src="${s.img}" alt="${s.cap}" onclick="goS(${i})" loading="lazy"/>`).join('');
+  let h=`<div class="mcat">${d.cat}</div><div class="mtit">${d.title}</div>`;
+  if(d.award)h+=`<div class="awl" style="margin-bottom:18px;display:inline-flex">${d.award}</div>`;
+  h+=`<div class="msec"><div class="mst">Overview</div><p class="mtx">${d.desc}</p></div>`;
+  h+=`<div class="msec"><div class="mst">Key Responsibilities</div>${d.resp.map(r=>`<div class="mli">${r}</div>`).join('')}</div>`;
+  h+=`<div class="msec"><div class="mst">Tools Used</div><div class="mchips">${d.tools.map(t=>`<span class="mc">${t}</span>`).join('')}</div></div>`;
+  h+=`<div class="msec"><div class="mst">Skills Applied</div><div class="mchips">${d.skills.map(s=>`<span class="mc">${s}</span>`).join('')}</div></div>`;
+  document.getElementById('mbody').innerHTML=h;
+  document.getElementById('mover').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeM(){document.getElementById('mover').classList.remove('open');document.body.style.overflow=''}
+function closeOut(e){if(e.target===document.getElementById('mover'))closeM()}
+function updateGallery(){
+  document.getElementById('gsl').style.transform=`translateX(-${cs*100}%)`;
+  document.querySelectorAll('.gd').forEach((d,i)=>d.classList.toggle('on',i===cs));
+  document.querySelectorAll('.gthumb').forEach((t,i)=>t.classList.toggle('on',i===cs));
+}
+function slide(dir){cs=(cs+dir+ts)%ts;updateGallery()}
+function goS(i){cs=i;updateGallery()}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeM();
+  if(e.key==='ArrowRight')slide(1);
+  if(e.key==='ArrowLeft')slide(-1);
+});
+
+// FORM
+function subForm(b){b.textContent='Message Sent ✓';b.style.background='rgba(255,255,255,.1)';b.style.color='#fff';setTimeout(()=>{b.textContent='Send Message';b.style.background='#fff';b.style.color='#000'},3000)}
 </script>
-
-
-<!--script for calculator-->
-
-<script>
-  function calculate() {
-    const num1 = parseFloat(document.getElementById('num1').value);
-    const num2 = parseFloat(document.getElementById('num2').value);
-    const operator = document.getElementById('operator').value;
-    let result = '';
-
-    if (isNaN(num1) || isNaN(num2)) {
-      result = "Please enter both numbers.";
-    } else {
-      switch (operator) {
-        case '+':
-          result = `Result: ${num1 + num2}`;
-          break;
-        case '-':
-          result = `Result: ${num1 - num2}`;
-          break;
-        case '*':
-          result = `Result: ${num1 * num2}`;
-          break;
-        case '/':
-          result = num2 !== 0 ? `Result: ${num1 / num2}` : "Cannot divide by zero.";
-          break;
-        default:
-          result = "Invalid operator";
-      }
-    }
-
-    document.getElementById('finalResult').textContent = result;
-  }
-</script>
-
-<!--script for lottery-->
-
-<script>
-  const tickets = [1456, 6784, 6754, 5467];
-
-  function drawLottery() {
-    const winner = tickets[Math.floor(Math.random() * tickets.length)];
-
-    // Show in main modal
-    const textElement = document.getElementById("winnerText");
-    textElement.textContent = `🎫 Winning ticket number is ${winner}`;
-    textElement.style.color = "lightgreen";
-    textElement.style.fontWeight = "bold";
-
-    // Show in nested winner modal
-    document.getElementById("modalWinnerText").textContent = `🎉 Congratulations! Ticket #${winner} is the winner!`;
-
-    // Trigger nested modal
-    const modal = new bootstrap.Modal(document.getElementById("winnerModal"));
-    modal.show();
-  }
-</script>
-
-
-
 </body>
-<script>
-  document.querySelectorAll('[style]').forEach(el => {
-    if (el.style.background || el.style.backgroundColor) {
-      el.style.background = '';
-      el.style.backgroundColor = '';
-    }
-  });
-  document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-</script>
-
 </html>
